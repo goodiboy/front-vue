@@ -23,13 +23,19 @@ localize({
     names: {
       email: '邮箱',
       password: '密码',
-      code: '验证码'
+      code: '验证码',
+      nickname: '昵称'
     },
     messages: {
       ...zh.messages,
       required: '请输入{_field_}',
       email: '请输入正确的邮箱格式',
-      password: '密码必须是6到18位'
+      password: '密码必须是6到18位',
+      confirmed: (field, params) => {
+        if (field === 'password2') {
+          return '两次输入的密码不一致'
+        }
+      }
     }
   },
   en: {
